@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{ url_for('static',filename='my-favicon.ico') }}">
+
+    <title>我的博客</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ url_for('static',filename='css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='css/blog.css') }}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ url_for('static',filename='js/ie-emulation-modes-warning.js') }}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">首页</a>
+          <a class="blog-nav-item" href="#">linux</a>
+          <a class="blog-nav-item" href="#">python</a>
+          <a class="blog-nav-item" href="#">其他</a>
+          <a class="blog-nav-item" href="#">关于我</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">bobo的 Blog</h1>
+        <p class="lead blog-description">记录bobo的运维生活</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title">第一篇博文</h2>
+            <p class="blog-post-meta">2018.11.11 by <a href="#">bobo</a></p>
+
+            <p>这是我的第一篇博客,记录的是flask开发的过程</p>
+            <hr>
+            <p>flask的开发的官方文档 &nbsp;&nbsp;<a href="https://dormousehole.readthedocs.io/en/latest/">请参考这里</a>, 目前学了几个内容:1.创建应用,配置设置,蓝图,以及简单的jinja2模板知识</p>
+            <blockquote>
+              <p>好好学习,天天向上 <strong>每天进步一点点</strong> 做一个对社会有用的人</p>
+            </blockquote>
+            <p>开发步骤一: <em>创建python virtualenv </em> 这里不再赘述</p>
+            <h2>环境</h2>
+            <p>操作系统:linux</p>
+            <h3>Python版本:python3.7</h3>
+            <p>flask版本:1.0.2 --- 快速上手中的例子如下:</p>
+            <pre><code>	from flask import Flask
+	app = Flask(__name__)
+	
+	@app.route('/')
+	def hello_world():
+		return 'Hello, World!</code></pre>
+            <p>项目创建好了</p>
+            <h3>下面运行flask的代码了</h3>
+            <pre><code>
+		$ export FLASK_APP=hello.py
+		$ flask run
+	 	* Running on http://127.0.0.1:5000/</code></pre>
+            <p>下面讲解一下一些flask的知识</p>
+            <ul>
+              <li>application: 应用</li>
+              <li>config:应用配置.</li>
+              <li>blueprint:蓝图.</li>
+            </ul>
+            <p>flask的路由管理.</p>
+            <ol>
+              <li>endpoint</li>
+              <li>url_maps</li>
+              <li>blueprint url_prefix 和 add_url_rules() 以及url_for</li>
+            </ol>
+            <p>以上就是flask的全部内容了</p>
+          </div><!-- /.blog-post -->
+	  <hr/>
+          <div class="blog-post">
+            <h2 class="blog-post-title">dango2.0 学习</h2>
+            <p class="blog-post-meta">11 23, 2018 by <a href="#">Jacob</a></p>
+	    <p>博主太懒了,目前什么也没留下!!</p>
+          </div><!-- /.blog-post -->
+
+          <nav>
+            <ul class="pager">
+              <li><a href="#">上一页</a></li>
+              <li><a href="#">下一页</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>人生格言</h4>
+            <p>努力拼搏<em>不下来青春的遗憾</em> 勤奋一点点,仔细一点点,沉静下心来!走向积极乐观的生活,做一个对社会有用的人</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2018</a></li>
+              <li><a href="#">February 2018</a></li>
+              <li><a href="#">January 2018</a></li>
+              <li><a href="#">December 2017</a></li>
+              <li><a href="#">November 2017</a></li>
+              <li><a href="#">October 2017</a></li>
+              <li><a href="#">September 2017</a></li>
+              <li><a href="#">August 2017</a></li>
+              <li><a href="#">July 2017</a></li>
+              <li><a href="#">June 2017</a></li>
+              <li><a href="#">May 2017</a></li>
+              <li><a href="#">April 2017</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>联系我</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/shixiaobo8">GitHub</a></li>
+              <li><a href="#">微博</a></li>
+              <li><a href="#">51cto</a></li>
+              <li><a href="#">微信</a></li>
+              <li><a href="#">邮箱</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>(bobo的博客)  <a href="#">bobo's blog</a> by <a href="#">@yiguoshi</a>.</p>
+      <p>
+        <a href="#">回到顶部</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static',filename='js/vendor/jquery.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ url_for('static',filename='js/ie10-viewport-bug-workaround.js') }}"></script>
+  </body>
+</html>
+
+
