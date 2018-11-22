@@ -1,0 +1,285 @@
+2018-11-21 12:41:14,454 [MainThread:139653244745536 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Path doesn't exist: 'migrations'.  Please use the 'init' command to create a new scripts folder.
+2018-11-21 12:43:03,118 [MainThread:140041807587136 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory migrations already exists
+2018-11-21 13:32:41,468 [MainThread:140376666900288 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory migrations already exists
+2018-11-21 14:51:47,835 [MainThread:140579395757888 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
+2018-11-21 14:52:47,726 [MainThread:140683743221568 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
+2018-11-21 16:19:50,411 [MainThread:140231331493696 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
+2018-11-21 20:28:48,195 [uWSGIWorker3Core0:139808986941504 in manage:] [task_id:flask.app] [flask.app:68] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 20:28:49,743 [uWSGIWorker4Core0:139808986941504 in manage:] [task_id:flask.app] [flask.app:68] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 20:28:53,345 [uWSGIWorker2Core0:139808986941504 in manage:] [task_id:flask.app] [flask.app:68] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 20:55:09,233 [MainThread:139797078087488 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Running on http://0.0.0.0:90/ (Press CTRL+C to quit)
+2018-11-21 20:55:09,234 [MainThread:139797078087488 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:55:09,728 [MainThread:140545375098688 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:55:09,758 [MainThread:140545375098688 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:55:26,402 [Thread-1:140545121867520 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 20:55:26,463 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 20:55:26,464 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,466 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 20:55:26,466 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,467 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 20:55:26,467 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,470 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 20:55:26,470 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,471 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 20:55:26,471 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,472 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 20:55:26,472 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,473 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 20:55:26,474 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 20:55:26,474 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:55:26,497 [Thread-1:140545121867520 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 20:55:26,498 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET / HTTP/1.1" 200 -
+2018-11-21 20:55:26,609 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,610 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/css/ie10-viewport-bug-workaround.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,619 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/css/blog.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,625 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/css/login_reg.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,627 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/layui/css/layui.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,628 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/css/font-awesome.css HTTP/1.1" 304 -
+2018-11-21 20:55:26,639 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/js/ie-emulation-modes-warning.js HTTP/1.1" 304 -
+2018-11-21 20:55:26,651 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/js/jquery.min.js HTTP/1.1" 304 -
+2018-11-21 20:55:26,657 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/js/bootstrap.min.js HTTP/1.1" 304 -
+2018-11-21 20:55:26,658 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/js/ie10-viewport-bug-workaround.js HTTP/1.1" 304 -
+2018-11-21 20:55:26,660 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:26] "GET /static/layui/layui.js HTTP/1.1" 304 -
+2018-11-21 20:55:27,092 [Thread-1:140545121867520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:55:27] "GET /static/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 304 -
+2018-11-21 20:56:41,651 [MainThread:140545375098688 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 20:56:41,748 [MainThread:139797078087488 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:56:42,238 [MainThread:140402245289792 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:56:42,247 [MainThread:140402245289792 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:56:47,913 [MainThread:140123222185792 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Running on http://0.0.0.0:90/ (Press CTRL+C to quit)
+2018-11-21 20:56:47,914 [MainThread:140123222185792 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:56:48,387 [MainThread:140673980680000 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:56:48,395 [MainThread:140673980680000 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:56:52,240 [MainThread:139947065706304 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Running on http://0.0.0.0:90/ (Press CTRL+C to quit)
+2018-11-21 20:56:52,241 [MainThread:139947065706304 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:56:52,708 [MainThread:140104502785856 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:56:52,716 [MainThread:140104502785856 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:56:55,811 [Thread-1:140104249554688 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 20:56:55,861 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 20:56:55,861 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,863 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 20:56:55,863 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,864 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 20:56:55,865 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,867 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 20:56:55,868 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,869 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 20:56:55,869 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,870 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 20:56:55,870 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,871 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 20:56:55,871 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 20:56:55,872 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 20:56:55,894 [Thread-1:140104249554688 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 20:56:55,895 [Thread-1:140104249554688 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:56:55] "GET / HTTP/1.1" 200 -
+2018-11-21 20:56:56,020 [Thread-1:140104249554688 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]- 123.112.16.17 - - [21/Nov/2018 20:56:56] "GET /static/my-favicon.ico HTTP/1.1" 200 -
+2018-11-21 20:57:12,913 [MainThread:140104502785856 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 20:57:13,013 [MainThread:139947065706304 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:57:13,535 [MainThread:140364859602752 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:57:13,544 [MainThread:140364859602752 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:57:46,857 [MainThread:140364859602752 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 20:57:46,953 [MainThread:139947065706304 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:57:47,448 [MainThread:140589432936256 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:57:47,458 [MainThread:140589432936256 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:57:52,521 [MainThread:140206265075520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Running on http://0.0.0.0:90/ (Press CTRL+C to quit)
+2018-11-21 20:57:52,522 [MainThread:140206265075520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:57:52,998 [MainThread:140303635261248 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:57:53,009 [MainThread:140303635261248 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:59:28,896 [MainThread:140303635261248 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 20:59:28,995 [MainThread:140206265075520 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:59:29,479 [MainThread:140545978193728 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:59:29,487 [MainThread:140545978193728 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 20:59:35,337 [MainThread:140199873513280 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Running on http://0.0.0.0:90/ (Press CTRL+C to quit)
+2018-11-21 20:59:35,338 [MainThread:140199873513280 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 20:59:35,811 [MainThread:139717616138048 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 20:59:35,820 [MainThread:139717616138048 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 21:07:56,441 [MainThread:139717616138048 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 21:07:56,524 [MainThread:140199873513280 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 21:07:57,014 [MainThread:140389858924352 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 21:07:57,023 [MainThread:140389858924352 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 21:09:12,718 [MainThread:140389858924352 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Detected change in '/www/web/flask_blog/manage.py', reloading
+2018-11-21 21:09:12,800 [MainThread:140199873513280 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Restarting with stat
+2018-11-21 21:09:13,280 [MainThread:140714728662848 in _internal:] [task_id:werkzeug] [werkzeug:88] [WARNING]-  * Debugger is active!
+2018-11-21 21:09:13,288 [MainThread:140714728662848 in _internal:] [task_id:werkzeug] [werkzeug:88] [INFO]-  * Debugger PIN: 451-558-253
+2018-11-21 21:30:31,717 [uWSGIWorker1Core0:139808986941504 in manage:] [task_id:flask.app] [flask.app:68] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:51:21,240 [uWSGIWorker3Core0:139979741292608 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:51:21,302 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:51:21,302 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,304 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:51:21,305 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,306 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:51:21,306 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,308 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:21,309 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,310 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:21,310 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,311 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:51:21,311 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,313 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:51:21,314 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:51:21,314 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:21,348 [uWSGIWorker3Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:51:23,286 [uWSGIWorker1Core0:139979741292608 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:51:23,348 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:51:23,348 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,351 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:51:23,351 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,352 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:51:23,353 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,355 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:23,355 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,356 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:23,356 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,357 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:51:23,358 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,359 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:51:23,360 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:51:23,360 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:23,363 [uWSGIWorker1Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:51:30,307 [uWSGIWorker2Core0:139979741292608 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:51:30,370 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:51:30,370 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,372 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:51:30,373 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,374 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:51:30,374 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,376 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:30,377 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,378 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:51:30,378 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,379 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:51:30,379 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,381 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:51:30,382 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:51:30,382 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:51:30,384 [uWSGIWorker2Core0:139979741292608 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:52:11,165 [uWSGIWorker3Core0:139816077736000 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:52:11,233 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:52:11,233 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,236 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:52:11,236 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,237 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:52:11,238 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,240 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:52:11,240 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,241 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:52:11,241 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,243 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:52:11,243 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,244 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:52:11,245 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:52:11,245 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:11,248 [uWSGIWorker3Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:52:18,453 [uWSGIWorker1Core0:139816077736000 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:52:18,515 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:52:18,516 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,518 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:52:18,518 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,520 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:52:18,520 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,522 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:52:18,523 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,524 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:52:18,524 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,525 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:52:18,525 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,527 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:52:18,528 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:52:18,528 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:52:18,530 [uWSGIWorker1Core0:139816077736000 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:57:21,460 [uWSGIWorker3Core0:140233294686272 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:57:21,524 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:57:21,525 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,527 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:57:21,527 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,530 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:57:21,530 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,532 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:57:21,532 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,535 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:57:21,535 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,536 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:57:21,536 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,538 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:57:21,539 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:57:21,539 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:57:21,586 [uWSGIWorker3Core0:140233294686272 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:58:05,439 [uWSGIWorker3Core0:139711348197440 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:58:05,500 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:58:05,501 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,503 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:58:05,503 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,505 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:58:05,505 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,507 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:58:05,508 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,509 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:58:05,509 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,510 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:58:05,510 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,511 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:58:05,512 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:58:05,513 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:05,515 [uWSGIWorker3Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 21:58:07,078 [uWSGIWorker4Core0:139711348197440 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 21:58:07,141 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 21:58:07,141 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,144 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 21:58:07,144 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,145 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 21:58:07,146 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,148 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:58:07,148 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,149 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 21:58:07,149 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,150 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 21:58:07,151 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,152 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 21:58:07,153 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 21:58:07,153 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 21:58:07,155 [uWSGIWorker4Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-21 22:14:45,490 [uWSGIWorker1Core0:139711348197440 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-21 22:14:45,551 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-21 22:14:45,552 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,554 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-21 22:14:45,554 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,556 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-21 22:14:45,556 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,558 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-21 22:14:45,558 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,559 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-21 22:14:45,560 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,561 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-21 22:14:45,561 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,562 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-21 22:14:45,563 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-21 22:14:45,563 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-21 22:14:45,593 [uWSGIWorker1Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK
+2018-11-22 00:45:15,946 [uWSGIWorker2Core0:139711348197440 in manage:] [task_id:flask.app] [flask.app:67] [INFO]- 启动项目中,正在初始化导航栏nav....
+2018-11-22 00:45:16,046 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SHOW VARIABLES LIKE 'sql_mode'
+2018-11-22 00:45:16,046 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,048 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT DATABASE()
+2018-11-22 00:45:16,049 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,050 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- show collation where `Charset` = 'utf8mb4' and `Collation` = 'utf8mb4_bin'
+2018-11-22 00:45:16,050 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,052 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test plain returns' AS CHAR(60)) AS anon_1
+2018-11-22 00:45:16,052 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,053 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test unicode returns' AS CHAR(60)) AS anon_1
+2018-11-22 00:45:16,054 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,055 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT CAST('test collated returns' AS CHAR CHARACTER SET utf8mb4) COLLATE utf8mb4_bin AS anon_1
+2018-11-22 00:45:16,055 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,056 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- BEGIN (implicit)
+2018-11-22 00:45:16,057 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- SELECT fb_navs.id AS fb_navs_id, fb_navs.`navTitle` AS `fb_navs_navTitle`, fb_navs.`navUrl` AS `fb_navs_navUrl`, fb_navs.`navType` AS `fb_navs_navType`, fb_navs.is_del AS fb_navs_is_del, fb_navs.role_id AS fb_navs_role_id 
+FROM fb_navs
+2018-11-22 00:45:16,057 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- {}
+2018-11-22 00:45:16,060 [uWSGIWorker2Core0:139711348197440 in log:] [task_id:sqlalchemy.engine.base.Engine] [sqlalchemy.engine.base.Engine:109] [INFO]- ROLLBACK

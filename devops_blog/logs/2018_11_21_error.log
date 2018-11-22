@@ -1,0 +1,6 @@
+2018-11-21 12:41:14,454 [MainThread:139653244745536 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Path doesn't exist: 'migrations'.  Please use the 'init' command to create a new scripts folder.
+2018-11-21 12:43:03,118 [MainThread:140041807587136 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory migrations already exists
+2018-11-21 13:32:41,468 [MainThread:140376666900288 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory migrations already exists
+2018-11-21 14:51:47,835 [MainThread:140579395757888 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
+2018-11-21 14:52:47,726 [MainThread:140683743221568 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
+2018-11-21 16:19:50,411 [MainThread:140231331493696 in __init__:] [task_id:root] [root:97] [ERROR]- Error: Directory /www/web/flask_blog/devops_blog/migrations already exists
