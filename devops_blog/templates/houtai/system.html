@@ -1,0 +1,242 @@
+{% extends "base/base.html" %}
+{% block title %} 后台文章编辑 {% endblock  %}
+{% block nav %} 
+    <style>
+        .blog-main{
+            margin-left:-60px;
+        }
+        #addmain {
+                display: none;
+        }
+
+    </style>
+{% endblock %}
+
+{% block article_title %}
+        <center><h3>前后台导航栏设置</h3></center>
+{% endblock %}
+
+{% block article %}
+<div id="addmain">
+    <div style="padding:10px;padding-left:100px;padding-top:20px;">
+        <lable>姓名(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="realName" id="realName"></lable>
+    </div>
+    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
+        部门(<label style="color: red">*</label>)：
+        <select name="deptId" id="deptId">
+
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;岗位(<label style="color: red">*</label>)：
+        <select name="positionId" id="positionId">
+
+        </select>
+    </div>
+    <div style="padding:10px;padding-left:60px;padding-top:20px;">
+        <lable>账户(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="username" id="username"></lable>
+    </div>
+
+    <div style="padding:10px;padding-left:60px;padding-top:20px;">
+        <lable>密码(<label style="color: red">*</label>)：<input type="password" style="width:500px;height:30px;" name="password" id="password"></lable>
+    </div>
+    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
+        状态(<label style="color: red">*</label>)：
+        <select name="userState" id="userState">
+            <option value="40">正常</option>
+            <option value="30">禁言</option>
+            <option value="20">关闭</option>
+            <option value="10">删除</option>
+        </select>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <label class="control-label">头像 &nbsp; &nbsp;
+            <input type="file" id="avator"  name="pic"
+            style="opacity:0;z-index:9;height:60px;width:180px;position:absolute;">
+        </label>
+
+
+    </div>
+    <div style="padding:10px;padding-left:60px;padding-top:20px;">
+        <lable>手机(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="mobile" id="mobile"></lable>
+    </div>
+    <div style="padding:10px;padding-left:60px;padding-top:20px;">
+        <lable>邮箱(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="email" id="email"></lable>
+    </div>
+    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
+        描述：
+    </div>
+</div>
+        <table class="layui-hide" id="demo" lay-filter="test"></table>
+
+        <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+          <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+          <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
+
+        <script>
+        layui.config({
+        version: '1542630986934' //为了更新 js 缓存，可忽略
+        });
+
+        layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+                var laydate = layui.laydate //日期
+                ,laypage = layui.laypage //分页
+                ,layer = layui.layer //弹层
+                ,table = layui.table //表格
+                ,carousel = layui.carousel //轮播
+                ,upload = layui.upload //上传
+                ,element = layui.element //元素操作
+
+
+        //执行一个 table 实例
+        table.render({
+        elem: '#demo'
+        ,height: 520
+        ,width: 1000
+        ,url: 'list_navs' //数据接口
+        ,title: '导航栏信息表'
+        ,page: true //开启分页
+        ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+        ,cols: [[ //表头
+        {type: 'checkbox', fixed: 'left'}
+    ,{field: 'id', title: 'ID', width:50, sort: true, fixed: 'left', totalRowText: '合计：'}
+    ,{field: 'title', title: '导航栏名称', width:120}
+    ,{field: 'url', title: '地址(url)', width: 220, sort: true, totalRow: true}
+    ,{field: 'role_id', title: '权限级别', width:100, sort: true}
+    ,{field: 'type', title: '类别', width: 80, sort: true, totalRow: true}
+    ,{field: 'nnav', title: '二级导航', width:300, sort: true}
+    ,{fixed: 'right', width: 165, align:'center', toolbar: '#barDemo'}
+    ]]
+    });
+
+    //监听头工具栏事件
+    table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+            ,data = checkStatus.data; //获取选中的数据
+            switch(obj.event){
+            case 'add':
+            parent.layer.open({
+            type: 1,
+            title: '导航栏信息',
+            area: ['700px', '700px'],
+            shadeClose: false, //点击遮罩关闭
+            content: $('#addmain'),
+            btn: ['确定', '取消'],
+
+            yes: function (index, layero) {//添加人员
+            //做数据校验
+            var eamilreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+            var reg= /^[A-Za-z]+$/;
+            var mobilereg = /^1[34587][0-9]{9}$/;
+            var id=$("#id").val();
+            var realName=$("#realName").val();
+            var description=$("#description").val();
+            var deptId=$("#deptId").val();
+            var positionId=$("#positionId").val();
+            var userState=$("#userState").val();
+            var email=$("#email").val();
+            var mobile=$("#mobile").val();
+            var password=$("#password").val();
+            var username=$("#username").val();
+            if(!realName){
+                layer.confirm("姓名不能为空！");
+            }else if(!deptId){
+                layer.msg("请选择部门！");
+            }else if(!username){
+                layer.msg("账户不能为空！");
+            }else if(!password&&!id){
+                layer.msg("请设置密码！");
+            }else if(password.length>0&&(password.length<8||reg.test(password)||!isNaN(password)||password.length>20)){
+                layer.msg("密码应在8位至20位之间，且为数字与字母的组合！");
+            }else if(!mobile){
+                layer.confirm("手机不能为空！");
+            }else　if(!mobilereg.test(mobile)){
+                layer.msg("请输入有效的手机号！");
+            } else if(!email){
+                layer.msg("邮箱不能为空！");
+            }else if(!eamilreg.test(email)){
+                layer.msg("请输入有效的邮箱！");
+            } else if(description&&description.length>500){
+                layer.msg("描述文字不能超过500个汉字！");
+            }else{
+                $("#adduser").submit();
+            }
+            },
+            btn2: function (index, layero) {
+                      return;
+                  },
+            cancel: function () {
+                        return;
+                    },
+            end: function () {
+                     $('#addmain').css("display", "none");
+                 }
+            });
+            break;
+            case 'update':
+            if(data.length === 0){
+            layer.msg('请选择一行');
+            } else if(data.length > 1){
+            layer.msg('只能同时编辑一个');
+            } else {
+            layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+            }
+            break;
+            case 'delete':
+            if(data.length === 0){
+            layer.msg('请选择一行');
+            } else {
+            layer.msg('删除');
+            }
+            break;
+            };
+    });
+
+    //监听行工具事件
+    table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data //获得当前行数据
+            ,layEvent = obj.event; //获得 lay-event 对应的值
+            if(layEvent === 'detail'){
+            layer.msg('查看操作');
+            } else if(layEvent === 'del'){
+            layer.confirm('真的删除行么', function(index){
+                obj.del(); //删除对应行（tr）的DOM结构
+                layer.close(index);
+                //向服务端发送删除指令
+                });
+            } else if(layEvent === 'edit'){
+            layer.msg('编辑操作');
+            }
+            });
+
+    //执行一个轮播实例
+    carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,height: 200
+    ,arrow: 'none' //不显示箭头
+    ,anim: 'fade' //切换动画方式
+    });
+
+    //分页
+    laypage.render({
+    elem: 'pageDemo' //分页容器的id
+    ,count: 100 //总页数
+    ,skin: '#1E9FFF' //自定义选中色值
+    //,skip: true //开启跳页
+    ,jump: function(obj, first){
+    if(!first){
+        layer.msg('第'+ obj.curr +'页', {offset: 'b'});}
+     }
+    });
+});
+    </script>
+{% endblock %}
+
+{% block right %} 
+
+{% endblock %}
+
+
+{% block footer %} 
+
+{% endblock %}

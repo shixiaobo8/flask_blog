@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ url_for('static',filename='my-favicon.ico') }}">
 
-    <title>我的博客</title>
+    <title>{% block title %}我的博客{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -29,10 +29,28 @@
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+   <!-- layui 引入css -->
+     <meta name="renderer" content="webkit">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link rel="stylesheet" href="{{ url_for('static',filename='layui/css/layui.css') }}"  media="all">
+   <!-- 注册登录css -->
+     <link rel="stylesheet" href="{{ url_for('static',filename='css/font-awesome.css') }}">
+     <link href="{{ url_for('static',filename='css/login_reg.css') }}" rel="stylesheet">
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for('static',filename='js/vendor/jquery.min.js') }}"><\/script>')</script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{{ url_for('static',filename='js/ie10-viewport-bug-workaround.js') }}"></script>
+    <!-- layui 引入js -->
+    <script src="{{ url_for('static',filename='layui/layui.js') }}" charset="utf-8"></script>
   </head>
 
   <body>
-
+     {% block nav %}
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
@@ -41,21 +59,249 @@
           <a class="blog-nav-item" href="#">python</a>
           <a class="blog-nav-item" href="#">其他</a>
           <a class="blog-nav-item" href="#">关于我</a>
+	  <ul class="nav navbar-nav navbar-right temp-custom-list-items">
+         	<li class="nav-item"><a class="nav-link" data-toggle="modal" data-target="#RegistrationModal" href="#"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+         	<li class+"nav-item"><a class="nav-link" data-toggle="modal" data-target="#LogInModal" href="#"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+         </ul>
         </nav>
       </div>
     </div>
+    {% endblock %}
+    
+    {% block login_reg %}
+    <!--======================================
+ =            registration form modal            =
+ =======================================-->
+ <!-- Modal -->
+ <div class="modal fade" id="RegistrationModal" role="dialog">
+  <div class="temp-custom-modal-wrap">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content temp-custom-modal-content">
+        <button type="button" class="close temp-custom-close-button" data-dismiss="modal">&times;</button>
+        <div class="modal-body temp-custom-modal-body">
+          <div class="temp-login-form-wrapper">
+            <div class="row custom-row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 temp-form-column-wrap-image">
+                <div class="temp-reg-column-wrap-image">
+                  <div class="temp-form-inner-wrapper">
+                    <h2>注册</h2>
+                    <p>如果用户没有帐户，则通过填写给定的表单创建帐户。</p>
+                    <p class="temp-heading-for-icon temp-reg-para">第三方登录</p>
+                    <div class="temp-anchor-wrap temp-reg-anchor-wrap">
+                      <a href="#" class=" temp-anchor text-left">
+                        <span class="temp-social-icon-wrap">
+                          <i class="fa fa-weixin" aria-hidden="true"></i>
+                        </span>
+                        <span>微信登录</span>
+                      </a>
+                      <a href="#" class="temp-anchor temp-icon-color text-left">
+                        <span class="temp-social-icon-wrap">
+                          <i class="fa fa-weibo" aria-hidden="true"></i>
+                        </span>
+                        <span>微博登录</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="temp-form-column-wrap">
+                  <h2>注册</h2>
+                  <form>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <span class="temp-span-wrap temp-span-input-label-wrap">
+                            <input  class="temp_input_field" type="text" >
+                            <label class="temp_input_label">
+                              <span class="temp_input_label-content">名称</span>
+                            </label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <span class="temp-span-wrap temp-span-input-label-wrap">
+                            <input class="temp_input_field" type="text" >
+                            <label class="temp_input_label">
+                              <span class="temp_input_label-content">邮箱</span>
+                            </label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <div class="form-group">
+                          <span class="temp-span-wrap temp-span-input-label-wrap">
+                            <input class="temp_input_field" type="password"  >
+                            <label class="temp_input_label">
+                              <span class="temp_input_label-content">密码</span>
+                            </label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <div class="form-group">
+                          <span class="temp-span-wrap temp-span-input-label-wrap">
+                            <input class="temp_input_field" type="password" >
+                            <label class="temp_input_label">
+                              <span class="temp_input_label-content">确认密码</span>
+                            </label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <span class="temp-span-wrap temp-span-input-label-wrap">
+                            <input  class="temp_input_field" type="text" >
+                            <label class="temp_input_label">
+                              <span class="temp_input_label-content">手机号码</span>
+                            </label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-sm-4">
+                              <label class="radio-inline temp-custom-radio-button">
+                                <input type="radio" name="gender" id="femaleRadio" value="Female">女性
+                                <span class="temp-radio-checkmark"></span>
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <label class="radio-inline temp-custom-radio-button">
+                                <input type="radio" name="gender" id="maleRadio" value="Male">男性
+                                <span class="temp-radio-checkmark"></span>
+                              </label>
+                            </div>
+                            <div class="col-sm-4">
+                              <label class="radio-inline temp-custom-radio-button">
+                                <input type="radio" name="gender" id="uncknownRadio" value="Unknown">未知
+                                <span class="temp-radio-checkmark"></span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="temp-login-button-wrap">
+                          <button class="btn btn-info temp-form-button" type="button">提交注册</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+<!--====  End of registration form modal  ====-->
+
+
+<!--======================================
+=            login form modal            =
+=======================================-->
+<!-- Modal -->
+<div class="modal fade" id="LogInModal" role="dialog">
+  <div class="temp-custom-modal-wrap">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content temp-custom-modal-content">
+        <button type="button" class="close temp-custom-close-button" data-dismiss="modal">&times;</button>
+        <div class="modal-body temp-custom-modal-body">
+          <div class="temp-login-form-wrapper">
+            <div class="row custom-row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 temp-form-column-wrap-image">
+                <div class="temp-login-column-wrap-image">
+                  <div class="temp-form-inner-wrapper">
+                    <h2>登录</h2>
+                    <p>如果你有帐户，然后登录。否则，首先创建您的帐户。</p>
+                    <p class="temp-heading-for-icon">第三方登录</p>
+                    <div class="temp-anchor-wrap temp-reg-anchor-wrap">
+                      <a href="#" class=" temp-anchor text-left">
+                        <span class="temp-social-icon-wrap">
+                          <i class="fa fa-weixin" aria-hidden="true"></i>
+                        </span>
+                        <span>微信登录</span>
+                      </a>
+                      <a href="#" class="temp-anchor temp-icon-color text-left">
+                        <span class="temp-social-icon-wrap">
+                          <i class="fa fa-weibo" aria-hidden="true"></i>
+                        </span>
+                        <span>微博登录</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="temp-form-column-wrap">
+                  <h2>登录</h2>
+                  <form>
+                    <div class="form-group">
+                      <span class="temp-span-wrap temp-span-input-label-wrap">
+                        <input class="temp_input_field" type="text"  >
+                        <label class="temp_input_label">
+                          <span class="temp_input_label-content">邮箱</span>
+                        </label>
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <span class="temp-span-wrap temp-span-input-label-wrap">
+                        <input class="temp_input_field" type="password"  >
+                        <label class="temp_input_label">
+                          <span class="temp_input_label-content">密码</span>
+                        </label>
+                      </span>
+                    </div>
+                    <div class="form-group">
+                      <label class="temp-checkbox-wrap">
+                        <input name="signup_agree_checkbox" value="1" type="checkbox">
+                        记住密码
+                        <span class="checkmark"></span> 
+                      </label>
+                      <label class="pull-right label-content-color custom-form-label2"> 
+                        <a href="#">忘记密码?</a>
+                      </label>
+                    </div>
+                    <div class="temp-login-button-wrap">
+                      <button class="btn btn-info temp-form-button" type="button">提交登录</button>
+                    </div>
+                  </form>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--====  End of login form modal  ====-->
+{% endblock %}
+
+
 
     <div class="container">
-
+      {% block article_title %}
+    <!-- blog 文章标题 -->
       <div class="blog-header">
         <h1 class="blog-title">bobo的 Blog</h1>
         <p class="lead blog-description">记录bobo的运维生活</p>
       </div>
-
+    {% endblock %}
+   
       <div class="row">
-
+	
         <div class="col-sm-8 blog-main">
-
+    {% block special_index %}
+    {% endblock %}
+    {% block article %}
           <div class="blog-post">
             <h2 class="blog-post-title">第一篇博文</h2>
             <p class="blog-post-meta">2018.11.11 by <a href="#">bobo</a></p>
@@ -111,8 +357,10 @@
             </ul>
           </nav>
 
+	{% endblock %}
         </div><!-- /.blog-main -->
-
+	
+	{% block right%}
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>人生格言</h4>
@@ -146,28 +394,20 @@
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->
-
+	{% endblock %}
+	
       </div><!-- /.row -->
-
     </div><!-- /.container -->
 
+   {%block footer %}
     <footer class="blog-footer">
       <p>(bobo的博客)  <a href="#">bobo's blog</a> by <a href="#">@yiguoshi</a>.</p>
       <p>
         <a href="#">回到顶部</a>
       </p>
     </footer>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
-    <script>window.jQuery || document.write('<script src="{{ url_for('static',filename='js/vendor/jquery.min.js') }}"><\/script>')</script>
-    <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ url_for('static',filename='js/ie10-viewport-bug-workaround.js') }}"></script>
-  </body>
+    {% endblock %}
+</body>
 </html>
 
 
