@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding:utf8 -*-
-from flask import render_template
+from flask import render_template,current_app
 from . import blog
 from .. import mysql_db,mongo_db
 
@@ -13,4 +13,4 @@ def index():
 
 @blog.route('/test')
 def test():
-    return render_template("blog/test.html")
+    return render_template("houtai/index.html")
