@@ -4,7 +4,7 @@
 	flask 启动参数
 """
 # 导入Falsk 应用
-from flask import Flask
+from flask import Flask, jsonify
 # 导入模板应用
 from flask import render_template
 # 导入falsk bootstrap 应用
@@ -13,6 +13,8 @@ from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 # 导入 sqlAlchemy mongo orm 模块
 from flask_mongoalchemy import MongoAlchemy
+# 导入 falsk_migrate 
+from flask_migrate import Migrate
 # 导入配置文件全局环境变量
 from devops_blog.config import flask_env_config
 import os
@@ -21,6 +23,8 @@ import os
 mysql_db = SQLAlchemy()
 # 初始化mongo数据库连接
 mongo_db = MongoAlchemy()
+migrate = Migrate()
+
 
 # 定义一个创建app应用并且初始化的方法
 def create_app(flask_env='default'):
@@ -33,6 +37,8 @@ def create_app(flask_env='default'):
     mysql_db.init_app(app)
     # 初始化mongo数据库连接
     mongo_db.init_app(app)
+    # 初始化mysql据库migrate 
+    migrate.init_app(app,mysql_db,directory=os.path.abspath(os.path.dirname(__file__))+os.sep+"migrations")
     # 导入自定义蓝图模块
     from .blog import blog as blog_bp
     # 注册蓝图 
@@ -41,4 +47,3 @@ def create_app(flask_env='default'):
     from .backend import backend as backend_bp
     app.register_blueprint(backend_bp,url_prefix='/houtai')
     return app
-
