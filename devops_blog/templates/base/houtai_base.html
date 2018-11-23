@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="{{ url_for('static',filename='my-favicon.ico') }}">
 
-    <title>{% block title %}我的博客{% endblock %}</title>
+    <title>{% block title %}后台管理{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -71,7 +71,6 @@
     {% endblock %}
     
     {% block login_reg %}
-     <link href="{{ url_for('static',filename='css/login_reg.css') }}" rel="stylesheet">
     <!--======================================
  =            registration form modal            =
  =======================================-->
