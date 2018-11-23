@@ -106,6 +106,17 @@ json_test={
 def get_list_comments():
     return jsonify(json_test)
 
+
+@backend.route('/addNavModal.html')
+def test():
+    return render_template('houtai/addNavModal.html')
+
+
+@backend.route('/test1')
+def test1():
+    return render_template('houtai/test1.html')
+
+
 @backend.route('/list_navs',methods=('GET','POST'))
 def listNavs():
     print(g)
