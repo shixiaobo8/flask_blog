@@ -1,15 +1,17 @@
-{% extends "base/base.html" %}
-{% block title %} 后台文章编辑 {% endblock  %}
-{% block nav %} 
-    <style>
-        .blog-main{
-            margin-left:-60px;
-        }
-        #addmain {
-                display: none;
-        }
-
-    </style>
+{% extends "houtai/index.html" %}
+{% block title %} 系统管理 {% endblock  %}
+{% block head %}
+<style>
+.blog-main{
+    margin-left:-60px;
+}   
+#addmain {
+    display: none;
+}   
+</style>
+<script src="{{ url_for('static',filename='js/houtai/addNavModal.js') }}"> </script>
+{% endblock %}
+{% block nav %}
 {% endblock %}
 
 {% block article_title %}
@@ -17,53 +19,14 @@
 {% endblock %}
 
 {% block article %}
-<div id="addmain">
-    <div style="padding:10px;padding-left:100px;padding-top:20px;">
-        <lable>姓名(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="realName" id="realName"></lable>
-    </div>
-    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
-        部门(<label style="color: red">*</label>)：
-        <select name="deptId" id="deptId">
+        <!-- 新增模态框start -->
+        <div id="addmain">
+            <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">  
+                Launch demo modal  
+            </button>   -->
 
-        </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;岗位(<label style="color: red">*</label>)：
-        <select name="positionId" id="positionId">
-
-        </select>
-    </div>
-    <div style="padding:10px;padding-left:60px;padding-top:20px;">
-        <lable>账户(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="username" id="username"></lable>
-    </div>
-
-    <div style="padding:10px;padding-left:60px;padding-top:20px;">
-        <lable>密码(<label style="color: red">*</label>)：<input type="password" style="width:500px;height:30px;" name="password" id="password"></lable>
-    </div>
-    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
-        状态(<label style="color: red">*</label>)：
-        <select name="userState" id="userState">
-            <option value="40">正常</option>
-            <option value="30">禁言</option>
-            <option value="20">关闭</option>
-            <option value="10">删除</option>
-        </select>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <label class="control-label">头像 &nbsp; &nbsp;
-            <input type="file" id="avator"  name="pic"
-            style="opacity:0;z-index:9;height:60px;width:180px;position:absolute;">
-        </label>
-
-
-    </div>
-    <div style="padding:10px;padding-left:60px;padding-top:20px;">
-        <lable>手机(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="mobile" id="mobile"></lable>
-    </div>
-    <div style="padding:10px;padding-left:60px;padding-top:20px;">
-        <lable>邮箱(<label style="color: red">*</label>)：<input type="text" style="width:500px;height:30px;" name="email" id="email"></lable>
-    </div>
-    <div style="padding:10px;padding-left:60px;;padding-top:20px;">
-        描述：
-    </div>
-</div>
+        </div>
+        <!-- 新增模态框end -->
         <table class="layui-hide" id="demo" lay-filter="test"></table>
 
         <script type="text/html" id="barDemo">
@@ -113,64 +76,8 @@
             var checkStatus = table.checkStatus(obj.config.id)
             ,data = checkStatus.data; //获取选中的数据
             switch(obj.event){
-            case 'add':
-            parent.layer.open({
-            type: 1,
-            title: '导航栏信息',
-            area: ['700px', '700px'],
-            shadeClose: false, //点击遮罩关闭
-            content: $('#addmain'),
-            btn: ['确定', '取消'],
-
-            yes: function (index, layero) {//添加人员
-            //做数据校验
-            var eamilreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
-            var reg= /^[A-Za-z]+$/;
-            var mobilereg = /^1[34587][0-9]{9}$/;
-            var id=$("#id").val();
-            var realName=$("#realName").val();
-            var description=$("#description").val();
-            var deptId=$("#deptId").val();
-            var positionId=$("#positionId").val();
-            var userState=$("#userState").val();
-            var email=$("#email").val();
-            var mobile=$("#mobile").val();
-            var password=$("#password").val();
-            var username=$("#username").val();
-            if(!realName){
-                layer.confirm("姓名不能为空！");
-            }else if(!deptId){
-                layer.msg("请选择部门！");
-            }else if(!username){
-                layer.msg("账户不能为空！");
-            }else if(!password&&!id){
-                layer.msg("请设置密码！");
-            }else if(password.length>0&&(password.length<8||reg.test(password)||!isNaN(password)||password.length>20)){
-                layer.msg("密码应在8位至20位之间，且为数字与字母的组合！");
-            }else if(!mobile){
-                layer.confirm("手机不能为空！");
-            }else　if(!mobilereg.test(mobile)){
-                layer.msg("请输入有效的手机号！");
-            } else if(!email){
-                layer.msg("邮箱不能为空！");
-            }else if(!eamilreg.test(email)){
-                layer.msg("请输入有效的邮箱！");
-            } else if(description&&description.length>500){
-                layer.msg("描述文字不能超过500个汉字！");
-            }else{
-                $("#adduser").submit();
-            }
-            },
-            btn2: function (index, layero) {
-                      return;
-                  },
-            cancel: function () {
-                        return;
-                    },
-            end: function () {
-                     $('#addmain').css("display", "none");
-                 }
-            });
+            case 'add': 
+                openModal()
             break;
             case 'update':
             if(data.length === 0){
@@ -230,12 +137,51 @@
     });
 });
     </script>
+<script>
+    //打开模态框
+    function openModal(){
+        var fatherBody = $(window.top.document.body);
+        var id = 'myModal';
+        var dialog = $('#' + id);
+        if (dialog.length == 0) {
+            dialog = $('<div class="modal fade" role="dialog" id="' + id + '" aria-labelledby="myModalLabel" aria-hidden="false"/>');
+            dialog.appendTo(fatherBody);
+        }
+        dialog.load("addNavModal.html", function() {
+                    dialog.modal({
+                        backdrop: false,
+                        keyboard: false,
+                        show: true
+                    });
+        });
+        // 在父窗口添加遮罩层 该问题未解决,启用后点击关闭遮罩未关闭
+        // fatherBody.append("<div id='backdropId' class='modal-backdrop fade in'></div>");
+    }
+
+    //关闭模态框
+    $(function(){
+        var fatherBody = $(window.top.document.body);
+        fatherBody.find($('.modal-backdrop')).remove();//去掉遮罩层
+        fatherBody.find("#myModal").modal('hide');
+        
+    /*    closeModal();        
+    //});
+    //function closeModal(){
+        var fatherBody = $(window.top.document.body);
+        fatherBody.find("#backdropId").remove();
+        fatherBody.find("#myModal").modal('hide');
+        console.log(444);
+        fatherBody.find("#myModal").on('hidden.bs.modal', function (e) {
+                fatherBody.find("#backdropId").remove();
+        });
+    */
+   });
+</script>
 {% endblock %}
 
 {% block right %} 
 
 {% endblock %}
-
 
 {% block footer %} 
 

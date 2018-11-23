@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% block title %} 后台文章编辑 {% endblock  %}
+{% block nav %} 
+
+{% endblock %}
+
+{% block article_title %}
+
+{% endblock %}
+
+{% block article %}
+<table width="100%" height="720px" border="1">
+    <tr>
+        <td>
+            <iframe id="iframe1" name="iframe1" src="iframe1.html" width="100%" height="100%"></iframe>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <iframe name="iframe2" src="iframe2.html" width="100%" height="100%"></iframe>
+        </td>
+    </tr>
+</table>
+<input type="text" id="textId" value="234" />
+<div class="modal fade" id="ajax" role="basic" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+function modalOut(url) {
+    $("#ajax").modal({
+remote: '/test1';
+});
+}
+</script>
+
+ {% endblock %}
+
+{% block right %} 
+
+{% endblock %}
+
+
+{% block footer %} 
+
+<script>
+$("#ajax").modal({
+remote: "./test1"
+});
+</script>
+{% endblock %}

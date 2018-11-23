@@ -1,0 +1,110 @@
+
+
+    <style>
+            .row {
+                padding-top:12px;
+                text-align: center;
+                display: inline;
+            }
+    </style>
+
+
+    <div class="modal-dialog" role="document">  
+        <div class="modal-content">  
+            <div class="modal-header">  
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">添加一级导航栏</h4>  
+            </div>  
+            <div class="modal-body"> 
+            <form method="" action="" class="form-horizontal"> 
+                <div class="form-group">
+                  <div class="container-fluid">
+                    <!-- Select Basic -->
+                    <div class="row">
+                        <div class="col-sm-2 col-sm-offset-1">
+                            <label ="col-sm-2 control-label" for="qian_hou">前/后台</label>
+                        </div>
+                        <div class="col-sm-6">
+                            <select class="form-control" id="qian_hou" name="type">
+                                <option>前台</option>
+                                <option>后台</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label class="control-label" for="fNavName">一级导航名称</label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="text" name="fNavName" id="fNavName" placeholder="请输入一级导航名称" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <label class="control-label" for="fNavUrl">一级导航url(选填)</label>
+                        </div>
+                        <div class="col-sm-7">
+                            <input type="url" class="form-control" placeholder="请输入相对路径,不填可添加二级导航" id="fNavUrl" name="fNavUrl">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label class="control-label" for="fNavPris">权限</label>
+                        </div>
+                        <div class="row">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox1" value="1" checked="checked"> 普通用户
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox2" value="2"> 管理员
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox3" value="3"> 其他用户
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="checkbox" id="inlineCheckbox3" value="4"> 特殊用户
+                            </label>
+                        </div>
+                    </div>
+
+                <div class="row" id="secondNavLables">
+                    <label class="col-sm-3">二级导航</label>
+                    <span class="glyphicon glyphicon-plus" id="addSecondNav" aria-hidden="true" style="color:green;"></span>
+                </div>
+
+                <div class="row" id="secondNavs">
+                </div>
+            </div>
+        </form>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>  
+                <button type="button" class="btn btn-primary" id="addFirstNav">保存</button>  
+            </div>
+        </div> 
+        
+        <!--预备二级菜单 form start-->
+        <div id="preAddSecondNavIndex" style="display:none">
+            <div id="preAddSecondNav">
+                <div class="col-sm-2">
+                     <label class="control-label" for="secondName">名称</label>
+                </div>
+                <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="名称" id="secondName" name="sNavName">
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label" for="secondUrl" >url</label>
+                </div>
+                <div class="col-sm-4">
+                        <input type="url" class="form-control" placeholder="不带域名的绝对路径" id="secondUrl" name="sNavUrl">
+                </div>
+                <div class="col-sm-1" id="minusSecondNavDiv">
+                        <span class="glyphicon glyphicon-minus" id="minusSecondNav" aria-hidden="true" style="padding-top:10px;;color:red;"></span>
+                </div>
+            </div>
+        </div>
+        <!--预备二级菜单 form end-->
+
