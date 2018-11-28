@@ -15,6 +15,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_mongoalchemy import MongoAlchemy
 # 导入 falsk_migrate 
 from flask_migrate import Migrate
+# 导入flask restfull api
+from flask_restful import Api
 # 导入配置文件全局环境变量
 from devops_blog.config import flask_env_config
 import os
@@ -24,7 +26,6 @@ mysql_db = SQLAlchemy()
 # 初始化mongo数据库连接
 mongo_db = MongoAlchemy()
 migrate = Migrate()
-
 
 # 定义一个创建app应用并且初始化的方法
 def create_app(flask_env='default'):
