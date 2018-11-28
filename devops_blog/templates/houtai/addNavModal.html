@@ -1,5 +1,5 @@
 
-
+<script src="{{ url_for('static',filename='js/houtai/addNavModal.js') }}"> </script>
     <style>
             .row {
                 padding-top:12px;
@@ -16,7 +16,7 @@
                 <h4 class="modal-title" id="myModalLabel">添加一级导航栏</h4>  
             </div>  
             <div class="modal-body"> 
-            <form method="" action="" class="form-horizontal"> 
+            <form class="form-horizontal" id="addFirstNavForm" > 
                 <div class="form-group">
                   <div class="container-fluid">
                     <!-- Select Basic -->
@@ -56,16 +56,16 @@
                         </div>
                         <div class="row">
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox1" value="1" checked="checked"> 普通用户
+                                <input type="checkbox" id="inlineCheckbox1" name="navPri" value="1" checked="checked"> 普通用户
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" value="2"> 管理员
+                                <input type="checkbox" id="inlineCheckbox2" name="navPri" value="2"> 管理员
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox3" value="3"> 其他用户
+                                <input type="checkbox" id="inlineCheckbox3" name="navPri" value="3"> 其他用户
                             </label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox3" value="4"> 特殊用户
+                                <input type="checkbox" id="inlineCheckbox3" name="navPri" value="4"> 特殊用户
                             </label>
                         </div>
                     </div>
@@ -107,4 +107,3 @@
             </div>
         </div>
         <!--预备二级菜单 form end-->
-

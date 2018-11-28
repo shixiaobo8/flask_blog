@@ -1,34 +1,134 @@
-{% extends "houtai/index.html" %}
+{% extends "base/base.html" %}
 {% block title %} 系统管理 {% endblock  %}
 {% block head %}
 <style>
-.blog-main{
-    margin-left:-60px;
-}   
-#addmain {
-    display: none;
-}   
+	form .row {
+		padding-top:12px;
+		text-align: center;
+		display: inline;
+	}
+	.blog-main{
+	    margin-left:-60px;
+	}   
+	#addmain {
+	    display: none;
+	}   
 </style>
-<script src="{{ url_for('static',filename='js/houtai/addNavModal.js') }}"> </script>
 {% endblock %}
 {% block nav %}
 {% endblock %}
-
+{% block login_reg %}
+{% endblock %}
 {% block article_title %}
         <center><h3>前后台导航栏设置</h3></center>
 {% endblock %}
 
 {% block article %}
         <!-- 新增模态框start -->
-        <div id="addmain">
-            <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">  
-                Launch demo modal  
-            </button>   -->
-
-        </div>
+     <div id="addmain">
+     </div>
         <!-- 新增模态框end -->
         <table class="layui-hide" id="demo" lay-filter="test"></table>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog" role="document">  
+		<div class="modal-content">  
+		    <div class="modal-header">  
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h4 class="modal-title" id="myModalLabel">添加一级导航栏</h4>  
+		    </div>  
+		    <div class="modal-body"> 
+		    <form class="form-horizontal" id="addFirstNavForm" > 
+			<div class="form-group">
+			  <div class="container-fluid">
+			    <div class="row">
+				<div class="col-sm-2 col-sm-offset-1">
+				    <label ="col-sm-2 control-label" for="qian_hou">前/后台</label>
+				</div>
+				<div class="col-sm-6">
+				    <select class="form-control" id="qian_hou" name="type" required="required">
+					<option value="1">前台</option>
+					<option value="0">后台</option>
+				    </select>
+				</div>
+			    </div>
+			
+			    <div class="row">
+				<div class="col-sm-3">
+				    <label class="control-label" for="fNavName">一级导航名称</label>
+				</div>
+				<div class="col-sm-7">
+				    <input type="text" name="fNavName" id="fNavName" placeholder="请输入一级导航名称" class="form-control" required="required">
+				</div>
+			    </div>
 
+			    <div class="row">
+				<div class="col-sm-4">
+				    <label class="control-label" for="fNavUrl">一级导航url(选填)</label>
+				</div>
+				<div class="col-sm-7">
+				    <input type="url" class="form-control" placeholder="请输入相对路径,不填可添加二级导航" id="fNavUrl" name="fNavUrl">
+				</div>
+			    </div>
+
+			    <div class="row">
+				<div class="col-sm-3">
+				    <label class="control-label" for="fNavPris">权限</label>
+				</div>
+				<div class="row">
+				    <label class="radio-inline">
+					<input type="checkbox" id="inlineCheckbox1" name="navPri" value="1" checked="checked"> 普通用户
+				    </label>
+				    <label class="radio-inline">
+					<input type="checkbox" id="inlineCheckbox2" name="navPri" value="2"> 管理员
+				    </label>
+				    <label class="radio-inline">
+					<input type="checkbox" id="inlineCheckbox3" name="navPri" value="3"> 其他用户
+				    </label>
+				    <label class="radio-inline">
+					<input type="checkbox" id="inlineCheckbox3" name="navPri" value="4"> 特殊用户
+				    </label>
+				</div>
+			    </div>
+
+			<div class="row" id="secondNavLables">
+			    <label class="col-sm-3">二级导航</label>
+			    <span class="glyphicon glyphicon-plus" id="addSecondNav" aria-hidden="true" style="color:green;"></span>
+			</div>
+
+			<div class="row" id="secondNavs">
+			</div>
+		    </div>
+		</form>
+
+		    <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>  
+			<button type="button" class="btn btn-primary" id="addFirstNav">保存</button>  
+		    </div>
+		</div> 
+		
+		<!--预备二级菜单 form start-->
+		<div id="preAddSecondNavIndex" style="display:none">
+		    <div id="preAddSecondNav">
+			<div class="col-sm-2">
+			     <label class="control-label" for="secondName">名称</label>
+			</div>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" placeholder="名称" id="secondName" name="sNavName" required="required">
+			</div>
+			<div class="col-sm-2">
+			    <label class="control-label" for="secondUrl" >url</label>
+			</div>
+			<div class="col-sm-4">
+				<input type="url" class="form-control" placeholder="不带域名的绝对路径" id="secondUrl" name="sNavUrl" required="required">
+			</div>
+			<div class="col-sm-1" id="minusSecondNavDiv">
+				<span class="glyphicon glyphicon-minus" id="minusSecondNav" aria-hidden="true" style="padding-top:10px;;color:red;"></span>
+			</div>
+		    </div>
+		</div>  
+		<!--预备二级菜单 form end-->
+	</div>
+        <!-- 新增模态框end -->
         <script type="text/html" id="barDemo">
         <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
           <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -49,13 +149,12 @@
                 ,upload = layui.upload //上传
                 ,element = layui.element //元素操作
 
-
         //执行一个 table 实例
         table.render({
         elem: '#demo'
         ,height: 520
         ,width: 1000
-        ,url: 'list_navs' //数据接口
+        ,url: 'NavList' //数据接口
         ,title: '导航栏信息表'
         ,page: true //开启分页
         ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
@@ -71,6 +170,10 @@
     ]]
     });
 
+    // 表格刷新方法
+    var reloadTable = { reloadTableData: function () {
+        table.reload('demo') }};
+    layui.data.reloadTable = reloadTable;
     //监听头工具栏事件
     table.on('toolbar(test)', function(obj){
             var checkStatus = table.checkStatus(obj.config.id)
@@ -138,45 +241,149 @@
 });
     </script>
 <script>
-    //打开模态框
+    //在父窗口中打开模态框
     function openModal(){
         var fatherBody = $(window.top.document.body);
         var id = 'myModal';
         var dialog = $('#' + id);
-        if (dialog.length == 0) {
-            dialog = $('<div class="modal fade" role="dialog" id="' + id + '" aria-labelledby="myModalLabel" aria-hidden="false"/>');
-            dialog.appendTo(fatherBody);
-        }
-        dialog.load("addNavModal.html", function() {
-                    dialog.modal({
-                        backdrop: false,
-                        keyboard: false,
-                        show: true
-                    });
-        });
-        // 在父窗口添加遮罩层 该问题未解决,启用后点击关闭遮罩未关闭
-        // fatherBody.append("<div id='backdropId' class='modal-backdrop fade in'></div>");
+	if(fatherBody.find("#myModal").length == 0){
+		    dialog.appendTo(fatherBody);
+	}
+	fatherBody.find('#myModal').modal({
+		backdrop: false,
+		keyboard: false,
+		show: true
+	});
     }
 
-    //关闭模态框
-    $(function(){
-        var fatherBody = $(window.top.document.body);
-        fatherBody.find($('.modal-backdrop')).remove();//去掉遮罩层
-        fatherBody.find("#myModal").modal('hide');
-        
-    /*    closeModal();        
-    //});
-    //function closeModal(){
-        var fatherBody = $(window.top.document.body);
-        fatherBody.find("#backdropId").remove();
-        fatherBody.find("#myModal").modal('hide');
-        console.log(444);
-        fatherBody.find("#myModal").on('hidden.bs.modal', function (e) {
-                fatherBody.find("#backdropId").remove();
-        });
-    */
-   });
-</script>
+</script> 
+<script>
+	
+                // 动态减少二级导航栏 动态添加触发的不能直接用click
+                parent.$(function(){
+                    $("#secondNavs").delegate('#minusSecondNav','click',function(){
+                        //console.log(parent.$(this).index());
+                        $(this).parent().parent().remove();
+                    });
+                });
+
+                // 动态添加和减少二级菜单
+                parent.$(function(){
+                        // 如果有一级url那就让添加二级菜单
+                        $("#fNavUrl").blur(function(){
+                            if((parent.$("#fNavUrl").val()) == ''){
+                                parent.$("#addSecondNav").show();
+                                parent.$("#secondNavs").show();
+                            }else if((parent.$("#fNavUrl").val()) != ''){
+                                parent.$("#addSecondNav").hide();
+                                parent.$("#secondNavs").hide();
+                            }
+                        });
+                        // 动态添加二级导航栏
+                        $("#addSecondNav").click(function(){
+                            var subNavForm = parent.$("#preAddSecondNavIndex").html();
+                            // 动态添加二级导航栏dom 到 #secondNavs 下
+                            parent.$("#secondNavs").append(subNavForm);
+                        });
+                });
+
+		// ajax 提交addmodal 的 form 表单
+		parent.$(function(){
+			$("#addFirstNav").click(function(){
+				var form_data = {};
+				var t = parent.$("form[id='addFirstNavForm']").serializeArray();
+				var navPris = new Array();
+				var sNavs = new Array();
+				var sNav = {}; 
+				parent.$.each(t,function(){
+					if(this.name == 'navPri'){
+						navPris.push(this.value);
+					}else if(this.name == 'sNavName' && Object.keys(sNav).length == 0){
+						sNav['sNavName'] = this.value;
+					}else if(this.name == 'sNavUrl' && sNav['sNavName'] != ''){
+						sNav['sNavUrl'] = this.value;
+						sNavs.push(sNav);
+						sNav = {};
+					}else{
+						form_data[this.name] = this.value;
+					}
+				});
+				form_data['navPris'] = navPris;
+				form_data['sNavs'] = sNavs;
+				// 验证必填项
+				// 验证一级导航栏名称
+				if(parent.$("#fNavName").val() == ''){
+					parent.layer.msg("请填写一级导航栏名称");
+					return;
+				}
+				// 验证一级导航栏权限
+				if(navPris.length == 0){
+					parent.layer.msg("请填写一级导航栏权限");
+					return;
+				}
+				// 验证二级导航栏name和url
+				if(parent.$("#fNavUrl").val() == '' && parent.$("input[name='sNavName']").length == 1){
+					parent.layer.msg("一级导航栏url不能为空!");
+					return;
+				}else if(parent.$("#fNavUrl").val() == '' && parent.$("input[name='sNavName']").length > 1){
+					var sNavNums = parent.$("input[name='sNavName']").length;
+					// 遍历数组sNavs
+					for(var i=0;i<sNavNums-1;i++)	{
+						if(parent.$(parent.$("input[name='sNavName']")[i]).val() ==''){
+							parent.layer.msg("请填写二级导航栏名称");
+							return;
+						}
+						if(parent.$(parent.$("input[name='sNavUrl']")[i]).val() ==''){
+							parent.layer.msg("请填写二级导航栏url");
+							return;
+						}
+						if(!parent.$(parent.$("input[name='sNavUrl']")[i]).val().startsWith('/')){
+							parent.layer.msg("二级导航栏url是个相对路径,以/开头");
+							return;
+						}
+					}
+				}else{
+					if(!parent.$("#fNavUrl").val().startsWith('/')){
+						parent.layer.msg("一级导航栏url是个相对路径,以/开头");
+						return;
+					}
+
+				}
+				// 隐藏掉就不添加二级导航栏
+				if(parent.$("#addSecondNav").css('display')=='none'){
+					form_data['sNavs']=[];
+				}
+				var data = JSON.stringify(form_data);
+				console.log(data);
+				// 提交到服务器
+				parent.$.ajax({
+					url: "/houtai/Nav",
+					type: "PUT",
+					contentType: "application/json",
+					data: data,
+					dataType: "json",
+					success: function(result){
+						// 提交结果
+						if(result['code'] == 200){
+							parent.layer.msg('<span>添加成功!</span>');
+							// 关闭模态框
+							$(window.top.document.body).find("#myModal").modal('hide');
+							//  这里不能用reload 因为父页面有动态添加的modal window.location.reload();
+							//  但是可以reload 刷新 layui table 数据 
+							var reloadTable = layui.data.reloadTable;
+							reloadTable.reloadTableData();
+						}else{
+							parent.layer.msg('<span style="color:red;">添加失败,请检查参数</span>');
+						}
+					},
+					error: function(result){
+							parent.layer.msg('<span style="color:red;">该功能存在bug,请联管理员</span>');
+						
+					}
+				});
+			});
+		});
+ </script>
 {% endblock %}
 
 {% block right %} 
