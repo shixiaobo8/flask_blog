@@ -59,7 +59,7 @@ class Nav(mysql_db.Model):
     # 一级导航栏标题
     navTitle = mysql_db.Column(mysql_db.String(120),unique=True,nullable=False,comment='一级导航栏标题')
     # 一级导航栏url,可以为空,默认为空
-    navUrl = mysql_db.Column(mysql_db.String(120),unique=True,nullable=True,default='',index=True,comment='一级导航栏url')
+    navUrl = mysql_db.Column(mysql_db.String(120),nullable=True,default='',index=True,comment='一级导航栏url')
     # 前后台导航栏分类
     navType = mysql_db.Column(mysql_db.Boolean(),default=False,comment='导航栏分类,默认为后台导航栏')
     # 逻辑删除
@@ -68,9 +68,11 @@ class Nav(mysql_db.Model):
     subnavs = mysql_db.relationship('subNav', backref='nav',lazy='dynamic')
     # 角色外键 
     role_id = mysql_db.Column(mysql_db.Integer,mysql_db.ForeignKey('fb_roles.id'),comment='关联角色,多对一')
-    def __init__(self,navTitle):
+    def __init__(self,navTitle,navUrl,navType,role_id):
         self.navTitle = navTitle
-
+        self.navType = navType
+        self.navUrl = navUrl
+        self.role_id = role_id
     def __repr__(self):
         return "<Nav %r>" %self.navTitle
 
@@ -80,9 +82,9 @@ class subNav(mysql_db.Model):
     __tablename__ = "fb_subnavs"
     id = mysql_db.Column(mysql_db.Integer,primary_key=True,autoincrement=True)
     # 二级导航栏标题
-    title = mysql_db.Column(mysql_db.String(120),unique=True,index=True,nullable=False,default='#',comment='二级导航栏标题')
+    title = mysql_db.Column(mysql_db.String(120),index=True,unique=True,nullable=False,default='#',comment='二级导航栏标题')
     # 二级导航栏url
-    nav_url = mysql_db.Column(mysql_db.String(200),unique=True,index=True,nullable=False,default='#',comment='二级导航栏url')
+    nav_url = mysql_db.Column(mysql_db.String(200),index=True,unique=True,nullable=False,default='#',comment='二级导航栏url')
     # 一级导航栏外键
     nav_Id = mysql_db.Column(mysql_db.Integer,mysql_db.ForeignKey('fb_navs.id'),comment='关联一级导航栏,多对一')
     # 逻辑删除
