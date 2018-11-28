@@ -5,6 +5,7 @@ from . import backend
 import os,datetime,random
 from .models import Post,Category
 
+
 json_test={
         "code": 0
         ,"msg": ""
@@ -112,9 +113,12 @@ def test():
     return render_template('houtai/addNavModal.html')
 
 
-@backend.route('/test1')
-def test1():
-    return render_template('houtai/test1.html')
+@backend.route('/addFNav',methods=('POST',))
+def addFNavs1():
+    res = dict()
+    res['code'] = 200
+    res['data'] = 'ok'
+    return jsonify(res)
 
 
 @backend.route('/list_navs',methods=('GET','POST'))
