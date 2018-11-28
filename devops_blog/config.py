@@ -65,7 +65,6 @@ dictConfig({
 class Config:
     SQLALCHEMY_RECORD_QUERIES = True
     SQLALCHEMY_NATIVE_UNICODE = 'utf8'  
-    TABLE_PREFIX = 'fb_'
 
 
 # 生产环境配置
@@ -130,6 +129,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
 
+
 # 在这里可以配置部署的是生产环境还是开发环境
 flask_env_config = {
     'development': DevelopmentConfig,
@@ -140,3 +140,28 @@ flask_env_config = {
 #    'default': ProductionConfig,
 }
 
+
+# api 通用错误返回码
+
+DEFINE_ERRORS = {
+    'UserAlreadyExists': { 
+        'code': 401,
+        'info' : '用户已经存在',
+        'extra': "请检查参数"
+    },
+    'vAlreadyExistsError1': {
+        'info': "导航栏信息已存在",
+        'code': 402,
+        'extra': "请检查参数"
+    },  
+    'NavAlreadyExistsError2': {
+        'info': "二级导航栏信息已存在",
+        'code': 403,
+        'extra': "请检查参数"
+    },  
+    'ServerError': {
+        'info':"服务器存在bug!",
+        'code': 501,
+        'extra':'请联系管理员!'
+    }
+}

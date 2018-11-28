@@ -5,6 +5,49 @@
 """
 
 import time
+from flask import current_app
+from .config import DEFINE_ERRORS
+
+
+class CustomFlaskErr(Exception):
+    # 默认的返回码
+    status_code = 400
+
+    # 自己定义了一个 return_code，作为更细颗粒度的错误代码
+    def __init__(self, return_code=None, status_code=200, payload=None):
+        Exception.__init__(self)
+        self.return_code = return_code
+        if status_code is not None:
+            self.status_code = status_code
+        self.payload = payload
+
+    # 构造要返回的错误代码和错误信息的 dict
+    def to_dict(self):
+        rv = dict(self.payload or ())
+        # 日志打印
+        current_app.logger.error(DEFINE_ERRORS[self.return_code])
+        # 增加 dict key: return code
+        rv['return_code'] = self.return_code
+        # 增加 dict key: message, 具体内容由常量定义文件中通过 return_code 转化而来
+        rv['code'] = DEFINE_ERRORS[self.return_code]['code']
+        rv['extra'] = DEFINE_ERRORS[self.return_code]['extra']
+        rv['message'] = DEFINE_ERRORS[self.return_code]['info']
+        return rv
+
+
+# return 通用返回类
+class ResponseCode:
+    SUCCESS = 200
+    WRONG_PARAM = 400
+    MESSAGE = "ok!"
+
+def generate_response(data=None,message=ResponseCode.MESSAGE,code=ResponseCode.SUCCESS):
+    return {
+        'message': message,
+        'code': code,
+        'data': data
+    }
+
 
 # 时间类
 class timeTools():
@@ -13,60 +56,3 @@ class timeTools():
     
     def getNowTime(self):
         return time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
-
-
-class BaseError(Exception):
-
-    default_status_code = 200
-
-    LEVEL_DEBUG = 0
-    LEVEL_INFO = 1
-    LEVEL_WARN = 2
-    LEVEL_ERROR = 3
-
-    def __init__(self, message, status_code=None, extras=None, parent_error=None):
-        self._message = message
-        self._code = status_code
-        self.extras = extras
-        self.parent_error = parent_error
-        self.level = BaseError.LEVEL_DEBUG
-
-    @property
-    def status_code(self):
-        if not self._code:
-            return BaseError.default_status_code
-        return self._code
-
-    def to_dict(self):
-        rv = {
-            'error_message': self._message,
-            'status_code': self.status_code,
-            'success': False
-             }
-        return rv
-
-
-class ValidationError(BaseError):
-    def __init__(self, message, extras=None):
-        super(ValidationError, self).__init__(message=message, extras=extras)
-        self.level = BaseError.LEVEL_INFO
-
-
-class NotFoundError(BaseError):
-    def __init__(self, message, extras=None):
-        super(NotFoundError, self).__init__(message=message, extras=extras)
-        self.level = BaseError.LEVEL_WARN
-
-
-class FormError(BaseError):
-    def __init__(self, form):
-        message = form.get_validate_error()
-        super(FormError, self).__init__(message, extras=form.data)
-        self.level = BaseError.LEVEL_INFO
-
-
-class OrmError(BaseError):
-    def __init__(self, message, status_code=None, extras=None, parent_error=None):
-        super(OrmError, self).__init__(message, status_code, extras, parent_error)
-        self.level = BaseError.LEVEL_ERROR
-

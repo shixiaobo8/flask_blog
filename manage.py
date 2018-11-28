@@ -4,8 +4,9 @@ from flask import jsonify,make_response,request,g
 from devops_blog import create_app
 from flask_script import Manager,Server,Shell
 from devops_blog.commands import Hello
-from devops_blog.utils import BaseError
 from flask_migrate import MigrateCommand
+# 导入自定义错误类
+from devops_blog.utils import CustomFlaskErr
 # 导入所有migrate需要操作的model 类
 from devops_blog.blog.models import *
 import os
@@ -35,16 +36,14 @@ manager.add_command("runserver",Server())
 manager.add_command('db',MigrateCommand)
 
 
-#@blog_app.errorhandler(BaseError)
-#def custom_error_handler(e):
-#    if e.level in [BaseError.LEVEL_WARN, BaseError.LEVEL_ERROR]:
-#        if isinstance(e, OrmError):
-#            blog_app.logger.exception('%s %s' % (e.parent_error, e))
-#        else:
-#            blog_app.logger.exception('错误信息: %s %s' % (e.extras, e))
-#    response = jsonify(e.to_dict())
-#    response.status_code = e.status_code
-#    return response
+# 自定义错误
+@blog_app.errorhandler(CustomFlaskErr)
+def handle_flask_error(error):
+    # response 的 json 内容为自定义错误代码和错误信息
+    response = jsonify(error.to_dict())
+    # response 返回 error 发生时定义的标准错误代码
+    response.status_code = error.status_code
+    return response
 
 
 # 404  错误
@@ -70,7 +69,6 @@ def print_request_info():
     print("=====")
     print(navs)
 
-#from flask import g
 
 #def get_db():
 #    if 'db' not in g:
