@@ -153,20 +153,20 @@
         table.render({
         elem: '#demo'
         ,height: 520
-        ,width: 1000
+        ,width: 1020
         ,url: 'NavList' //数据接口
         ,title: '导航栏信息表'
         ,page: true //开启分页
         ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
         ,cols: [[ //表头
-        {type: 'checkbox', fixed: 'left'}
-    ,{field: 'id', title: 'ID', width:50, sort: true, fixed: 'left', totalRowText: '合计：'}
+     {type: 'checkbox', fixed: 'left'}
+    ,{field: 'id', title: 'ID', width:50, sort: true, fixed: 'left', align:'center'}
     ,{field: 'title', title: '导航栏名称', width:120}
-    ,{field: 'url', title: '地址(url)', width: 220, sort: true, totalRow: true}
-    ,{field: 'role_id', title: '权限级别', width:100, sort: true}
-    ,{field: 'type', title: '类别', width: 80, sort: true, totalRow: true}
-    ,{field: 'nnav', title: '二级导航', width:300, sort: true}
-    ,{fixed: 'right', width: 165, align:'center', toolbar: '#barDemo'}
+    ,{field: 'url', title: '地址(url)', width: 220, sort: true,align:'center' }
+    //,{field: 'role_id', title: '权限级别', width:100, sort: true}
+    ,{field: 'type', title: '类别', width: 80, sort: true, align:'center'}
+    ,{field: 'subnavs', title: '二级导航', width:300,align:'center',sort: true}
+    ,{fixed: 'right', width: 165, title:'操作',align:'center', toolbar: '#barDemo'}
     ]]
     });
 
@@ -373,7 +373,7 @@
 							var reloadTable = layui.data.reloadTable;
 							reloadTable.reloadTableData();
 						}else{
-							parent.layer.msg('<span style="color:red;">添加失败,请检查参数</span>');
+							parent.layer.msg('<span style="color:red;">'+JSON.stringify(result)+'</span>');
 						}
 					},
 					error: function(result){
