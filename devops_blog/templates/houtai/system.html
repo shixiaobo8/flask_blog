@@ -140,35 +140,55 @@
         version: '1542630986934' //为了更新 js 缓存，可忽略
         });
 
-        layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+        layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider','laytpl'], function(){
                 var laydate = layui.laydate //日期
                 ,laypage = layui.laypage //分页
                 ,layer = layui.layer //弹层
+                ,laytpl = layui.laytpl //弹层
                 ,table = layui.table //表格
                 ,carousel = layui.carousel //轮播
                 ,upload = layui.upload //上传
                 ,element = layui.element //元素操作
 
-        //执行一个 table 实例
-        table.render({
-        elem: '#demo'
-        ,height: 520
-        ,width: 1020
-        ,url: 'NavList' //数据接口
-        ,title: '导航栏信息表'
-        ,page: true //开启分页
-        ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
-        ,cols: [[ //表头
-     {type: 'checkbox', fixed: 'left'}
-    ,{field: 'id', title: 'ID', width:50, sort: true, fixed: 'left', align:'center'}
-    ,{field: 'title', title: '导航栏名称', width:120}
-    ,{field: 'url', title: '地址(url)', width: 220, sort: true,align:'center' }
-    //,{field: 'role_id', title: '权限级别', width:100, sort: true}
-    ,{field: 'type', title: '类别', width: 80, sort: true, align:'center'}
-    ,{field: 'subnavs', title: '二级导航', width:300,align:'center',sort: true}
-    ,{fixed: 'right', width: 165, title:'操作',align:'center', toolbar: '#barDemo'}
-    ]]
+            //执行一个 table 实例
+            table.render({
+            elem: '#demo'
+            ,height: 520
+            ,width: 1020
+            ,url: 'NavList' //数据接口
+            ,title: '导航栏信息表'
+            ,page: true //开启分页
+            ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
+            ,cols: [[ //表头
+         {type: 'checkbox', fixed: 'left'}
+        ,{field: 'id', title: 'ID', width:50, sort: true, fixed: 'left', align:'center'}
+        ,{field: 'title', title: '导航栏名称', width:120}
+        ,{field: 'url', title: '地址(url)', width: 220, sort: true,align:'center' }
+        //,{field: 'role_id', title: '权限级别', width:100, sort: true}
+        ,{field: 'type', title: '类别', width: 80, sort: true, align:'center'
+            ,templet:function(d){
+                if(d['type']){
+                    return "后台";
+                }else{
+                    return "前台";
+                };
+            }
+        }
+        ,{field: 'subnavs', title: '二级导航', width:300,align:'center',sort: true
+            ,templet:function(d){
+                return JSON.stringify(d['subnavs']);
+            }
+        }
+        ,{fixed: 'right', width: 165, title:'操作',align:'center', toolbar: '#barDemo'}
+        ]]
     });
+
+    // layui模板语法
+    laytpl.config({
+      open: '<^%',
+      close: '%$>'
+    });
+   
 
     // 表格刷新方法
     var reloadTable = { reloadTableData: function () {
@@ -188,7 +208,7 @@
             } else if(data.length > 1){
             layer.msg('只能同时编辑一个');
             } else {
-            layer.alert('编辑 [id]：'+ checkStatus.data[0].id);
+                layer.msg(JSON.stringify(checkStatus.data[0]));
             }
             break;
             case 'delete':
@@ -203,18 +223,18 @@
 
     //监听行工具事件
     table.on('tool(test)', function(obj){ //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
-            var data = obj.data //获得当前行数据
-            ,layEvent = obj.event; //获得 lay-event 对应的值
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
             if(layEvent === 'detail'){
-            layer.msg('查看操作');
+                layer.msg('查看操作');
             } else if(layEvent === 'del'){
-            layer.confirm('真的删除行么', function(index){
-                obj.del(); //删除对应行（tr）的DOM结构
-                layer.close(index);
-                //向服务端发送删除指令
+                layer.confirm('真的删除行么', function(index){
+                    obj.del(); //删除对应行（tr）的DOM结构
+                    layer.close(index);
+                    //向服务端发送删除指令
                 });
             } else if(layEvent === 'edit'){
-            layer.msg('编辑操作');
+                layer.msg(obj);
             }
             });
 
@@ -238,6 +258,7 @@
         layer.msg('第'+ obj.curr +'页', {offset: 'b'});}
      }
     });
+    
 });
     </script>
 <script>
@@ -384,6 +405,7 @@
 			});
 		});
  </script>
+
 {% endblock %}
 
 {% block right %} 

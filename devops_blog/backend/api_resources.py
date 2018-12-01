@@ -116,7 +116,7 @@ class NavListApi(Resource):
         page_index = args['page']
         page_size = args['limit']
         # 先获取所有满足条件的nav isouter=True 表示left join all 方法得到一个列表,这里不使用paginate,会报错
-        navall = mysql_db.session.query(Nav).join(subNav,Nav.id==subNav.nav_Id,isouter=True).all()
+        navall = mysql_db.session.query(Nav).filter(Nav.is_del==0).join(subNav,Nav.id==subNav.nav_Id,isouter=True).all()
         # 分页
         page_navs = navall[(page_index-1)*page_size:page_size*page_index]
         return {'code':0,'count':len(navall),'cureent_page':page_index,"page_size":page_size,'data':marshal(page_navs,Nav_fields)}
